@@ -6,42 +6,42 @@
 
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
-  int populacao, pontosTuristicos;
-  char codigo[4], estado, nomeCidade[50];
-  float pib, area;
+  int populacao, pontosTuristicos;          // Armazena numeros inteiros
+  char codigo[4], estado, nomeCidade[50];   // Armazena texto
+  float pib, area;                          // Armazena numeros decimais
   // Área para entrada de dados
-  printf("Cadastro de cartas");
+  printf("Cadastro de cartas\n");        //mensagem para o usuário
   printf("**================**\n");
 
-  printf("Estado (A - H): ");
+  printf("Estado (A - H): ");          //Pede e lê a letra do estado (De A–H), atribuindo à variável "estado"
   scanf(" %c", &estado);
 
-  printf("Código da carta (Ex: A01, B01):  ");
+  printf("Código da carta (Ex: A01, B01):  ");         //Pede e lê o código da carta, atribuindo à variável "codigo"
   scanf("%s", codigo);
 
-  printf("Nome da cidade: ");
-  scanf(" %[^\n]", &nomeCidade);
+  printf("Nome da cidade: ");          //Pede e lê o nome da cidade, aceitando espaços (" %[^\n]"), atribuindo à variável "nomeCidade"
+  scanf(" %[^\n]", nomeCidade);
 
-  printf("População: ");
+  printf("População: ");            //Pede e lê a população da cidade, atribuindo à variável "populacao"
   scanf("%d", &populacao);
 
-  printf("Área (em km²): ");
+  printf("Área (em km²): ");        //Pede e lê a área da cidade, atribuindo à variável "area"
   scanf("%f", &area);
 
-  printf("PIB: ");
+  printf("PIB: ");              //Pede e lê o PIB da cidade, atribuindo à variável "pib"
   scanf("%f", &pib);
   
-  printf("Numero de pontos turisticos: ");
+  printf("Numero de pontos turisticos: ");          //Pede e lê o número de pontos turísticos, atribuindo à variável "pontosTuristicos"
   scanf("%d", &pontosTuristicos);
   
   // Área para exibição dos dados da cidade
-  printf("===================\n===================\n");
-  printf("Estado: %c\n", estado);
-  printf("Código: %s\n", codigo);
+  printf("===================\n===================\n");            //Saída final formatada para o usuário
+  printf("Estado: %c\n", estado);                                  // "\n" indica quebra de linha    
+  printf("Código: %s\n", codigo);                          
   printf("Cidade: %s\n", nomeCidade);
   printf("População: %d\n", populacao);
-  printf("Área: %.2f\n", area);
-  printf("PIB: %.2f\n", pib);
+  printf("Área: %.2f km²\n", area);                                    // "%.2f" mostra numeros decimais com duas casas após a vírgula
+  printf("PIB: %.2f bilhões\n", pib);
   printf("Pontos turisticos: %d\n", pontosTuristicos);
   printf("===================\n===================\n");
 
