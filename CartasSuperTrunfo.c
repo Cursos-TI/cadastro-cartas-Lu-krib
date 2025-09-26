@@ -40,7 +40,7 @@ int main() {
   scanf("%d", &pontosTuristicos);
 
   //Entrada de dados carta 2
-  printf("Informações da segunda carta");
+  printf("Informações da segunda carta\n");
   printf("Estado (A - H): ");          //Pede e lê a letra do estado (De A–H), atribuindo à variável "estado2"
   scanf(" %c", &estado2);
 
