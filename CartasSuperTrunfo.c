@@ -6,13 +6,15 @@
 
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
-  int populacao, pontosTuristicos;          // Armazena numeros inteiros
+  unsigned long int populacao;
+  int pontosTuristicos;          // Armazena numeros inteiros
   char codigo[4], estado, nomeCidade[50];   // Armazena texto
-  float pib, area;                          // Armazena numeros decimais
+  float pib, area, pibPCapita, densidadePopulacional, superPoder;                          // Armazena numeros decimais
   //Propriedades da segunda carta
-  int populacao2, pontosTuristicos2;          // Armazena numeros inteiros
+  unsigned long int populacao2;
+  int pontosTuristicos2;          // Armazena numeros inteiros
   char codigo2[4], estado2, nomeCidade2[50];   // Armazena texto
-  float pib2, area2;                          // Armazena numeros decimais
+  float pib2, area2, pibPCapita2, densidadePopulacional2, superPoder2;                          // Armazena numeros decimais
   // Área para entrada de dados
   printf("Cadastro de cartas\n");        //mensagem para o usuário
   printf("**===========================**\n");
@@ -28,7 +30,7 @@ int main() {
   scanf(" %[^\n]", nomeCidade);
 
   printf("População: ");            //Pede e lê a população da cidade, atribuindo à variável "populacao"
-  scanf("%d", &populacao);
+  scanf("%lu", &populacao);
 
   printf("Área (em km²): ");        //Pede e lê a área da cidade, atribuindo à variável "area"
   scanf("%f", &area);
@@ -51,7 +53,7 @@ int main() {
   scanf(" %[^\n]", nomeCidade2);
 
   printf("População: ");            //Pede e lê a população da cidade, atribuindo à variável "populacao2"
-  scanf("%d", &populacao2);
+  scanf("%lu", &populacao2);
 
   printf("Área (em km²): ");        //Pede e lê a área da cidade, atribuindo à variável "area2"
   scanf("%f", &area2);
@@ -61,36 +63,57 @@ int main() {
   
   printf("Numero de pontos turisticos: ");          //Pede e lê o número de pontos turísticos, atribuindo à variável "pontosTuristicos2"
   scanf("%d", &pontosTuristicos2);
+
+  //Calculos das cartas
+  densidadePopulacional = (float) populacao / area;
+  pibPCapita = pib / (float) populacao;
+  superPoder = (float) populacao + area + pib + pibPCapita + pontosTuristicos + (1.0f / densidadePopulacional);
+  
+  densidadePopulacional2 = (float) populacao2 / area2;
+  pibPCapita2 = pib2 / (float) populacao2;
+  superPoder2 = (float) populacao2 + area2 + pib2 + pibPCapita2 + pontosTuristicos2 + (1.0f / densidadePopulacional2);
   
   
-// Área para exibição dos dados da cidade 1
+  // Área para exibição dos dados da cidade 1
   printf("Informacoes carta numero 1\n");
-  printf("=========================\n=========================\n");            //Saída final formatada para o usuário
-  printf("Estado: %c\n", estado);                                              // "\n" indica quebra de linha    
+  printf("===================\n===================\n");            //Saída final formatada para o usuário
+  printf("Estado: %c\n", estado);                                  // "\n" indica quebra de linha    
   printf("Código: %s\n", codigo);                          
   printf("Cidade: %s\n", nomeCidade);
-  printf("População: %d\n", populacao);
+  printf("População: %lu\n", populacao);
   printf("Área: %.2f km²\n", area);                                    // "%.2f" mostra numeros decimais com duas casas após a vírgula
   printf("PIB: %.2f bilhões\n", pib);
   printf("Pontos turisticos: %d\n", pontosTuristicos);
-  printf("=========================\n=========================\n");
+  printf("Densidade populacional: %.2f habitantes por km²\n", densidadePopulacional);
+  printf("PIB per capita: %.2f reais\n", pibPCapita);
+
+  printf("===================\n===================\n");
 
   // Área para exibição dos dados da cidade 2
   printf("Informacoes carta numero 2\n");
-  printf("=========================\n=========================\n");            //Saída final formatada para o usuário
-  printf("Estado: %c\n", estado2);                                             // "\n" indica quebra de linha    
+  printf("===================\n===================\n");            //Saída final formatada para o usuário
+  printf("Estado: %c\n", estado2);                                  // "\n" indica quebra de linha    
   printf("Código: %s\n", codigo2);                          
   printf("Cidade: %s\n", nomeCidade2);
-  printf("População: %d\n", populacao2);
+  printf("População: %lu\n", populacao2);
   printf("Área: %.2f km²\n", area2);                                    // "%.2f" mostra numeros decimais com duas casas após a vírgula
   printf("PIB: %.2f bilhões\n", pib2);
   printf("Pontos turisticos: %d\n", pontosTuristicos2);
-  printf("=========================\n=========================\n");
-
-
-
-
-
+  printf("Densidade populacional: %.2f habitantes por km²\n", densidadePopulacional2);
+  printf("PIB per capita: %.2f reais\n", pibPCapita2);
+  printf("===================\n===================\n");
+  
+  
+  // Área para exibição dos dados de comparação
+  printf("Comparação de cartas: \n");
+  printf("População: Carta %d venceu (%d) \n", (populacao > populacao2) ? 1 : 2, (populacao > populacao2));   //O primeiro %d mostra qual carta venceu (1 ou 2)
+  printf("Área: Carta %d venceu (%d) \n", (area > area2) ? 1 : 2, (area > area2));                            //O segundo %d mostra o resultado da condição booleana (1 ou 0) 
+  printf("PIB: Carta %d venceu (%d) \n", (pib > pib2) ? 1 : 2, (pib > pib2));                                 //(1 para verdadeiro e 0 para falso) 
+  printf("Pontos turísticos: Carta %d venceu (%d) \n", (pontosTuristicos > pontosTuristicos2) ? 1 : 2, (pontosTuristicos > pontosTuristicos2));
+  printf("Densidade Populacional: Carta %d venceu (%d) \n", (densidadePopulacional < densidadePopulacional2) ? 1 : 2, (densidadePopulacional < densidadePopulacional2));
+  printf("PIB per Capita: Carta %d venceu (%d) \n", (pibPCapita > pibPCapita2) ? 1 : 2, (pibPCapita > pibPCapita2));
+  printf("Super Poder: Carta %d venceu (%d) \n", (superPoder > superPoder2) ? 1 : 2, (superPoder > superPoder2));
+  
 
   
 return 0;
