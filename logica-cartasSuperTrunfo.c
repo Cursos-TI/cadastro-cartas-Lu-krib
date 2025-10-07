@@ -246,19 +246,21 @@ int main() {
 
     printf("Comparação individual dos atributos:\n");
 
-  if (resultado1)
+  if (resultado1){
     printf("Carta 1 venceu no atributo 1.\n");
-else if (valor1Carta1 == valor1Carta2)
+  }else if (valor1Carta1 == valor1Carta2){
     printf("Empate no atributo 1.\n");
-else
+  }else{
     printf("Carta 2 venceu no atributo 1.\n");
-
-if (resultado2)
+  }
+  
+  if (resultado2){
     printf("Carta 1 venceu no atributo 2.\n");
-else if (valor2Carta1 == valor2Carta2)
+  }else if (valor2Carta1 == valor2Carta2){
     printf("Empate no atributo 2.\n");
-else
+  }else{
     printf("Carta 2 venceu no atributo 2.\n");
+}
   //Soma dos atributos
 
   if(soma1 > soma2) {
