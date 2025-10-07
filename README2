@@ -1,0 +1,39 @@
+# Super Trunfo - Cidades
+
+Este projeto foi desenvolvido em **linguagem C** como parte do desafio **Super Trunfo - Países/Cidades**.  
+O objetivo é comparar duas cartas de cidades com base em atributos como população, área, PIB e outros, determinando qual cidade vence ou se ocorre empate.
+
+---
+
+# Objetivo do Programa
+
+O programa permite:
+
+1. **Cadastrar duas cartas de cidades** (com informações como estado, nome, população, área, PIB e pontos turísticos).
+2. **Escolher dois atributos** para comparar entre as cartas.
+3. **Comparar automaticamente** os valores informados e exibir:
+   - Qual cidade venceu em cada atributo.
+   - O resultado final da disputa (Carta 1 venceu, Carta 2 venceu ou Empate).
+
+---
+
+# Como Usar
+
+# 1. Compilação
+
+No terminal, compile o código com:
+
+gcc super_trunfo.c -o super_trunfo
+
+Após compilar, execute o programa: ./super_trunfo
+
+Você escolherá dois atributos para comparação
+
+1 - População
+2 - Área
+3 - PIB
+4 - Pontos Turísticos
+5 - Densidade Populacional
+6 - PIB per Capita
+7 - Super Poder
+
