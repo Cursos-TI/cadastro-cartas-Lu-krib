@@ -242,24 +242,27 @@ int main() {
   printf("Atributo 2: %.2f\n", valor2Carta2);
   printf("Soma total dos atributos: %.2f\n", soma2);
 
+
   //Vitoria por atributo
+  printf("Comparação individual dos atributos:\n");
 
-    printf("Comparação individual dos atributos:\n");
+  if (resultado1) {
+      printf("Carta 1 venceu no atributo 1.\n");
+  } else if (valor1Carta1 == valor1Carta2) {
+      printf("Empate no atributo 1.\n");
+  } else {
+      printf("Carta 2 venceu no atributo 1.\n");
+  }
 
-  if (resultado1)
-    printf("Carta 1 venceu no atributo 1.\n");
-  else if (valor1Carta1 == valor1Carta2)
-    printf("Empate no atributo 1.\n");
-  else
-    printf("Carta 2 venceu no atributo 1.\n");
+  if (resultado2) {
+      printf("Carta 1 venceu no atributo 2.\n");
+  } else if (valor2Carta1 == valor2Carta2) {
+      printf("Empate no atributo 2.\n");
+  } else {
+      printf("Carta 2 venceu no atributo 2.\n");
+  }
 
-  if (resultado2)
-    printf("Carta 1 venceu no atributo 2.\n");
-  else if (valor2Carta1 == valor2Carta2)
-    printf("Empate no atributo 2.\n");
-  else
-    printf("Carta 2 venceu no atributo 2.\n");
-  
+ 
   //Soma dos atributos
 
   if(soma1 > soma2) {
